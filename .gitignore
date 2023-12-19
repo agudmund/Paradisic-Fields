@@ -1,0 +1,21 @@
+
+# Generic ignores
+*.idlk
+*.csproj
+*.sln
+*.vsconfig
+packages-lock.json
+10 Things.txt
+proj.conf
+Build
+
+# Unity ignores 
+Unity/.vs
+Unity/Logs
+Unity/obj
+Unity/Library
+Unity/Temp
+Unity/UnityPackageManager
+Unity/ProjectSettings
+Unity/UserSettings
+Unity/Packages

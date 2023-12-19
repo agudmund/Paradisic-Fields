@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7564153821864454770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2284084070963077730}
+  - component: {fileID: 4905797340453822778}
+  - component: {fileID: 6790618828373126410}
+  - component: {fileID: 596888998513240938}
+  - component: {fileID: 6412112517218665119}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2284084070963077730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564153821864454770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5423448, y: -3.678788, z: 20.838291}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4905797340453822778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564153821864454770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af16e04de4a526f46a39cf6babb0f86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  monies: 100
+  tile: {fileID: 589914359031609810, guid: 958803f17a99dcd45a1275092fcd74cd, type: 3}
+  pixel: {fileID: 3776947164542520260, guid: 38e85621152adde47a751630327498be, type: 3}
+  triggers:
+  - {fileID: 0}
+  - {fileID: 0}
+  triggerLights:
+  - {fileID: 0}
+  - {fileID: 0}
+  encounter: {fileID: 7327602343368093029, guid: 29e1474ff0ee46f4698331932bd5b0e7,
+    type: 3}
+  numberOfEncounters: 5
+  totalplaytime: 0
+  hours: 0
+  minutes: 0
+  ground: {fileID: 0}
+--- !u!114 &6790618828373126410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564153821864454770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946c391f7df83124385e651d8084991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: 0
+  sound: 0
+  menu: {fileID: 0}
+  menuClick: {fileID: 0}
+  newGame: {fileID: 0}
+  pageFlip: {fileID: 0}
+  pitchIndex: 0
+--- !u!114 &596888998513240938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564153821864454770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108d239ae09f77e4abdceb9982434990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderMask:
+    serializedVersion: 2
+    m_Bits: 0
+  area: {fileID: 0}
+  prefabs:
+  - {fileID: 6991437022592722351, guid: 1b704debfb516304cadcd29ba4590e89, type: 3}
+  rootRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  randomRotation: 0
+  offsetY: 1
+  spread: 2
+  number: 30
+  objectName: Hearts
+  scatterClamp: 5
+--- !u!114 &6412112517218665119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564153821864454770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108d239ae09f77e4abdceb9982434990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderMask:
+    serializedVersion: 2
+    m_Bits: 192
+  area: {fileID: 0}
+  prefabs:
+  - {fileID: 7765034086100467179, guid: 467f7bcbcf595dc4899674436d376c46, type: 3}
+  - {fileID: 6028179989945230547, guid: 443327666d79d9543affa513e2c12a05, type: 3}
+  - {fileID: 8537634159595108247, guid: 60469dfdfd765fa41b18573d36760328, type: 3}
+  - {fileID: 1854952543267748597, guid: 9aa192e2ff07e0b45809c82bab47b23a, type: 3}
+  - {fileID: 1508751374382763383, guid: 68c5b76a4507d4f45995c470d49ee91b, type: 3}
+  - {fileID: 8885726717198254814, guid: dcf079233716df141a22d67b80ed8aaa, type: 3}
+  - {fileID: 852768151914753764, guid: aea465f4e15289c4d9f7881d1cbbbcdf, type: 3}
+  - {fileID: 6622337094580851270, guid: 204f688acc10e4b4593a644116081bd5, type: 3}
+  - {fileID: 8357424510965113901, guid: 75042e742b691ce4389faebba786deae, type: 3}
+  rootRotation: {x: 0, y: 0, z: 0, w: 0}
+  randomRotation: 1
+  offsetY: 2
+  spread: 2
+  number: 250
+  objectName: Trees
+  scatterClamp: 5
