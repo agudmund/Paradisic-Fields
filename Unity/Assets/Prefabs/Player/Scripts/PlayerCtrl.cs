@@ -261,17 +261,33 @@ public class PlayerCtrl : MonoBehaviour
         controller.Move(verticalVelocity * Time.deltaTime);
     }
 
-    void OnGrab(InputAction.CallbackContext context){
-        if (grabz==null){
-            if(Rayhit()){
+    void OnGrab(InputAction.CallbackContext context)
+    {
+        Debug.Log("grabz it");
+        if (grabz==null)
+        {
+            if(Rayhit())
+            {
+                Debug.Log("diz thing: " + ray.transform.name);
 
-                if(ray.transform.name.Contains("Puff") ){
+                if(ray.transform.name.Contains("Puff") )
+                {
                     PuffCtrl puff = ray.transform.GetComponent<PuffCtrl>();
                     if(puff.detached){
                         grabz = puff.GetComponent<Grabbable>();
                         grabz.Grab(grabPoint.transform);
-                    }}}
+                    }
+                }
+                if(ray.transform.name.Contains("NotifiCat") )
+                {
+                    NotifiCat puff = ray.transform.GetComponent<NotifiCat>();
+                    // if(puff.page.detached){
+                    grabz = puff.GetComponent<Grabbable>();
+                    grabz.Grab(grabPoint.transform);
+                    // }
+                }
             }
+        }
         else{
             if(bagOpen){
                 // Replace and add to actual inventory
@@ -286,10 +302,14 @@ public class PlayerCtrl : MonoBehaviour
 
     void Inventory(InputAction.CallbackContext context)
     {
-        if (msg.page.active)
+        if (msg)
         {
-            msg.page.Drop();
+            if(msg.page.active)
+            {
+                msg.page.Drop();
+            }
         }
+
         else
         {
             bagOpen = !bagOpen;
@@ -313,25 +333,26 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-    void OnShoot(InputAction.CallbackContext context){
+    void OnShoot(InputAction.CallbackContext context)
+    {
+        Debug.Log("pechew chew!");
         if(grabz==null){
-            if(Rayhit()){
-                // if(ray.transform.name.Contains("heart") ){
-                //         HeartCtrl heart = ray.transform.GetComponent<HeartCtrl>();
-                //         heart.deezNuts();
-                //         }
-                //     // Do things to the puff when it gets hit.
-                //     if(ray.transform.name.Contains("Puff") ){
-                //         PuffCtrl puff = ray.transform.GetComponent<PuffCtrl>();
-                //         puff.deezNuts();
-                //         }
-                //     if(ray.transform.name.Contains("Bed") ){
-                //         BedCtrl puff = ray.transform.GetComponent<BedCtrl>();
-                //         puff.deezNuts();
-                //         }
+            if(Rayhit())
+            {
+                Debug.Log("Diz: " + ray.transform.name);
+                if(ray.transform.name.Contains("heart") ){
+                        HeartCtrl heart = ray.transform.GetComponent<HeartCtrl>();
+                        heart.deezNuts();
+                        }
+                    // Do things to the puff when it gets hit.
+                    if(ray.transform.name.Contains("Puff") ){
+                        PuffCtrl puff = ray.transform.GetComponent<PuffCtrl>();
+                        puff.deezNuts();
+                        }
             }
         }
-        else{
+        else
+        {
             hungerlevel = hungerlevel - 1;
             hungerfactor = (float)Math.Round( hungerfactor * 1.1f, 1) ;
             Destroy(grabz.gameObject);
