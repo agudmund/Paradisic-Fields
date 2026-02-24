@@ -1,0 +1,97 @@
+/* =============================================
+   styles/styles.qss
+   Cozy Paradisic Fields – Main Stylesheet
+   Layered linen look: darker main window, bright widgets
+   Built with love by Yours Truly & Grok (February 2026)
+   ============================================= */
+
+QMainWindow {
+    background-color: #ede6d8;   /* slightly darker warm background for the whole window */
+    color: #3f2a1d;
+}
+
+QWidget {
+    background-color: 282828;   
+    color: #3f2a1d;
+    font-family: "Segoe UI", system-ui, Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Canvas stays intentionally dark for perfect contrast with our warm nodes */
+PanZoomGraphicsView, QGraphicsView {
+    background-color: #282828;
+}
+
+/* Canvas placeholder text – the welcoming heart of the empty state */
+QLabel#canvas_placeholder {
+    font-size: 26px;
+    font-weight: 400;
+    color: #6b5a4a;
+    padding: 60px 40px;
+    background-color: #fffaf0;
+    border: 3px dashed #d4b99f;
+    border-radius: 20px;
+    qproperty-alignment: AlignCenter;
+}
+
+/* Image preview frame – ready for fabric photos */
+QLabel#imagePreview {
+    background-color: #fffaf0;
+    border: 2px dashed #d4b99f;
+    border-radius: 12px;
+    min-height: 300px;
+}
+
+/* Load Fabric button – our friendly call-to-action */
+QPushButton#loadFabricButton {
+    background-color: #b8a78f;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+QPushButton#loadFabricButton:hover {
+    background-color: #6f7f6f;
+}
+QPushButton#loadFabricButton:pressed {
+    background-color: #5a6a5a;
+}
+
+/* Gentle scrollbars */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: #f0e9df;
+    width: 8px;
+    height: 8px;
+}
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: #b8a78f;
+    border-radius: 4px;
+    min-height: 30px;
+}
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+    background: #9b8a72;
+}
+
+/* Clear button */
+QPushButton#clearPreviewButton {
+    background-color: #b8a78f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+QPushButton#clearPreviewButton:hover {
+    background-color: #9b8a72;
+}
+QPushButton#clearPreviewButton:pressed {
+    background-color: #7f6e58;
+}
+QPushButton#clearPreviewButton:disabled {
+    background-color: #d4c9b8;
+    color: #8a7a67;
+    opacity: 0.7;
+}

@@ -1,0 +1,243 @@
+[2026-02-24 14:26:56] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:26:56] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:26:56] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = FabricIdentifier(logger=logger)
+             ^^^^^^^^^^^^^^^^
+NameError: name 'FabricIdentifier' is not defined
+[2026-02-24 14:28:11] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:28:11] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:28:14] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 77, in __init__
+    self.analyzer = FabricAnalyzer(logger=self.logger)
+                    ^^^^^^^^^^^^^^
+NameError: name 'FabricAnalyzer' is not defined
+[2026-02-24 14:28:33] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:28:33] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:28:55] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Desert Vista.png
+[2026-02-24 14:30:17] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:30:17] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:30:23] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Wild Jungle.png
+[2026-02-24 14:30:23] [INFO] Thumbnail added to node 1
+[2026-02-24 14:39:46] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:39:47] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:40:00] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Atlantic Ocean.png
+[2026-02-24 14:40:00] [INFO] Thumbnail added to node 1
+[2026-02-24 14:42:31] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:42:31] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:44:44] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:44:44] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:44:44] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 61, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 73, in create_canvas_panel
+    scene.addItem(welcome)
+    ^^^^^
+NameError: name 'scene' is not defined
+[2026-02-24 14:45:24] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:45:24] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:45:25] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 61, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 73, in create_canvas_panel
+    scene.addItem(welcome)
+    ^^^^^
+NameError: name 'scene' is not defined
+[2026-02-24 14:51:08] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:51:08] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:53:36] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:53:36] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:55:40] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:55:40] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:55:45] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Wild Jungle.png
+[2026-02-24 14:58:59] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 14:58:59] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 14:59:14] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Bump.png
+[2026-02-24 14:59:15] [INFO] Thumbnail added to node 1
+[2026-02-24 15:04:42] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:04:42] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:09:16] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:09:16] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:10:07] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:10:07] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:13:54] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:13:54] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:19:05] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:19:05] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:21:00] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:21:00] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:21:00] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 69, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = CanvasPanel.create_canvas_panel(self)
+                                                       ^^^^^^^^^^^
+NameError: name 'CanvasPanel' is not defined
+[2026-02-24 15:21:18] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:21:18] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:21:18] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 69, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = CozyCanvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 52, in create_canvas_panel
+    CanvasPanel._add_background_texture(scene)
+    ^^^^^^^^^^^
+NameError: name 'CanvasPanel' is not defined
+[2026-02-24 15:21:26] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:21:26] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:21:26] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 69, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = CozyCanvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 52, in create_canvas_panel
+    CanvasPanel._add_background_texture(scene)
+    ^^^^^^^^^^^
+NameError: name 'CanvasPanel' is not defined
+[2026-02-24 15:21:34] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:21:34] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:21:34] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 69, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = CozyCanvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 52, in create_canvas_panel
+    CanvasPanel._add_background_texture(scene)
+    ^^^^^^^^^^^
+NameError: name 'CanvasPanel' is not defined
+[2026-02-24 15:22:34] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:22:34] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:22:34] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 69, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = CozyCanvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\Paradisic Fields\utils\canvas_view.py", line 52, in create_canvas_panel
+    CanvasPanel._add_background_texture(scene)
+    ^^^^^^^^^^^
+NameError: name 'CanvasPanel' is not defined
+[2026-02-24 15:22:50] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:22:50] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:22:57] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Atlantic Ocean.png
+[2026-02-24 15:22:57] [INFO] Thumbnail added to node 1
+[2026-02-24 15:48:53] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:48:53] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:48:53] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 71, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = Cozy.Canvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\_util\bin\cozy\cozy\canvas.py", line 45, in create_canvas_panel
+    view = PanZoomGraphicsView(scene, parent)
+           ^^^^^^^^^^^^^^^^^^^
+NameError: name 'PanZoomGraphicsView' is not defined
+[2026-02-24 15:50:19] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:50:19] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:50:19] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 71, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = Cozy.Canvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\_util\bin\cozy\cozy\canvas.py", line 54, in create_canvas_panel
+    welcome = CozyCanvas.create_welcome_node()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'CozyCanvas' has no attribute 'create_welcome_node'
+[2026-02-24 15:51:35] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:51:36] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:51:36] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 71, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = Cozy.Canvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\_util\bin\cozy\cozy\canvas.py", line 54, in create_canvas_panel
+    welcome = CozyCanvas.create_welcome_node()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'CozyCanvas' has no attribute 'create_welcome_node'
+[2026-02-24 15:51:59] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:51:59] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:51:59] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 71, in __init__
+    right_panel, self.canvas_view, self.canvas_scene = Cozy.Canvas.create_canvas_panel(self)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\thisg\Desktop\_util\bin\cozy\cozy\canvas.py", line 56, in create_canvas_panel
+    view.centerOn(0, 0)
+    ^^^^
+NameError: name 'view' is not defined
+[2026-02-24 15:52:10] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:52:10] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:52:17] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Desert Vista.png
+[2026-02-24 15:52:17] [INFO] Thumbnail added to node 1
+[2026-02-24 15:54:27] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 15:54:27] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 15:54:33] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Desert Vista.png
+[2026-02-24 15:54:34] [INFO] Thumbnail added to node 1
+[2026-02-24 16:02:37] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:02:37] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:04:45] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:04:45] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:05:13] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:05:13] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:05:52] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:05:52] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:06:58] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:06:59] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:08:20] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:08:20] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:08:33] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Sedona Mountain.png
+[2026-02-24 16:08:40] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Desert Vista.png
+[2026-02-24 16:15:42] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:15:42] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:15:51] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture -Canyon Blossom.png
+[2026-02-24 16:16:24] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:16:24] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:16:29] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Sedona Mountain.png
+[2026-02-24 16:17:05] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:17:05] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:17:10] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Desert Vista.png
+[2026-02-24 16:17:43] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:17:43] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:17:47] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Sedona Mountain.png
+[2026-02-24 16:18:40] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:18:40] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:18:45] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Atlantic Ocean.png
+[2026-02-24 16:21:03] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:21:03] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:21:08] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Bump.png
+[2026-02-24 16:22:56] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:22:56] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:23:01] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture - Atlantic Ocean.png
+[2026-02-24 16:25:30] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 16:25:30] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 16:25:34] [INFO] User selected image: C:/Users/thisg/Desktop/Paradisic Fields/Happy Trees/Tree Face Texture -Succulent.png
+[2026-02-24 16:25:34] [INFO] Background analysis complete for node 1: Fabric analyzed and ready to enjoy! ✨
