@@ -2,45 +2,52 @@
   "version": "1.0",
   "nodes": [
     {
+      "node_id": 13,
+      "full_text": "New note 🌱",
+      "pos_x": 260.0,
+      "pos_y": 240.0,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 12,
+      "full_text": "New note 🌱",
+      "pos_x": -64.99999999999997,
+      "pos_y": -142.00000000000006,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 11,
+      "full_text": "New note 🌱",
+      "pos_x": 254.0,
+      "pos_y": 53.0,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 9,
+      "full_text": "New note 🌱",
+      "pos_x": 240.00000000000006,
+      "pos_y": -522.0,
+      "thumbnail_path": null
+    },
+    {
       "node_id": 8,
-      "full_text": "main.py",
-      "pos_x": 0.0,
-      "pos_y": -450.99999999999994,
+      "full_text": "header",
+      "pos_x": -121.99999999999994,
+      "pos_y": -570.0,
       "thumbnail_path": null
     },
     {
       "node_id": 7,
-      "full_text": "Header",
-      "pos_x": -77.00000000000004,
-      "pos_y": -324.0,
-      "thumbnail_path": null
-    },
-    {
-      "node_id": 6,
-      "full_text": "New note 🌱",
-      "pos_x": 140.0,
-      "pos_y": 160.0,
-      "thumbnail_path": null
-    },
-    {
-      "node_id": 5,
       "full_text": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n#\n# Paradisic Fields - main.py\n# A minor UI for enjoying.\n# Built using a single shared braincell by Yours Truly and Grok\n#\n# Toggle debug logging via environment variable COZY_DEBUG",
-      "pos_x": -72.0,
-      "pos_y": -125.0,
+      "pos_x": -31.0,
+      "pos_y": -388.0,
       "thumbnail_path": null
     },
     {
-      "node_id": 1,
-      "full_text": "Welcome to Paradisic Fields 🌟",
-      "pos_x": 274.0,
-      "pos_y": -282.99999999999994,
-      "thumbnail_path": null
-    },
-    {
-      "node_id": 4,
+      "node_id": 10,
       "full_text": "New note 🌱",
-      "pos_x": 315.0,
-      "pos_y": -92.99999999999999,
+      "pos_x": 296.0,
+      "pos_y": -331.99999999999994,
       "thumbnail_path": null
     }
   ]
