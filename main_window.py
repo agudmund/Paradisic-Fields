@@ -8,18 +8,20 @@
 from PySide6.QtWidgets import (
     QMainWindow,
     QApplication,
-    QFileDialog,
     QWidget,
     QVBoxLayout,
     QSplitter,
-    QLabel
+    QLabel,
+    QFileDialog
 )
-from PySide6.QtCore import Qt, QThread, QPointF
+from PySide6.QtCore import Qt, QThread, QPointF, QSettings
 from PySide6.QtGui import QIcon, QPixmap
 from utils.file_dialog import open_image_dialog
 from utils.control_panel import create_controls_panel
 import logging
 import cozy as Cozy
+from pathlib import Path
+
 
 class Paradisic(QMainWindow):
     def __init__(self, logger=None):
@@ -37,6 +39,10 @@ class Paradisic(QMainWindow):
         self.thread = None
         self.worker = None
 
+        # Track currently loaded session for smart Save + auto-load on startup
+        self.current_session_path = None
+        self.settings = QSettings("Single Shared Braincell", "Paradisic Fields")
+
         # Central splitter: Left column (controls + preview) | Right canvas
         self.main_splitter = QSplitter(Qt.Horizontal)
         self.setCentralWidget(self.main_splitter)
@@ -49,7 +55,7 @@ class Paradisic(QMainWindow):
 
         controls_panel, self.load_button, self.clear_button, self.exit_button, \
         self.save_button, self.load_session_button, self.new_note_button, \
-        self.delete_button, self.status_label = create_controls_panel(
+        self.delete_button, self.quick_combo, self.status_label = create_controls_panel(
             self,
             on_load_callback=self._handle_load_button,
             on_clear_callback=self._clear_preview,
@@ -57,10 +63,12 @@ class Paradisic(QMainWindow):
             on_save_callback=self._handle_save_session,
             on_load_session_callback=self._handle_load_session,
             on_new_note_callback=self._handle_new_note,
-            on_delete_note_callback=self._handle_delete_selected
+            on_delete_note_callback=self._handle_delete_selected,
+            on_quick_load_callback=self._handle_quick_load
         )
         left_layout.addWidget(controls_panel)
 
+        # Image Preview
         self.image_preview = QLabel()
         self.image_preview.setObjectName("imagePreview")
         self.image_preview.setAlignment(Qt.AlignCenter)
@@ -80,61 +88,18 @@ class Paradisic(QMainWindow):
         self.main_splitter.setSizes([520, 960])
         self.main_splitter.setCollapsible(0, True)
 
-    def _handle_save_session(self):
-        """Save the current sketchbook session — editable JSON + thumbnails 🌱"""
-        filepath, _ = QFileDialog.getSaveFileName(
-            self, "Save Sketchbook Session", "", "JSON Files (*.json)"
-        )
-        if filepath:
-            Cozy.Session.save_session(self.canvas_scene, filepath)
-            self.status_label.setText("Sketchbook session saved with love! 🌟")
+        # Populate Quick Load combo
+        self.refresh_quick_load_combo()
 
-    def _handle_load_session(self):
-        """Load a saved sketchbook session — welcome back to your beautiful work!"""
-        filepath, _ = QFileDialog.getOpenFileName(
-            self, "Load Sketchbook Session", "", "JSON Files (*.json)"
-        )
-        if filepath:
-            Cozy.Session.load_session(self.canvas_scene, filepath)
-            self.status_label.setText("Sketchbook session loaded and ready to enjoy! 🌱")
+        # Auto-load the last session on startup (if it still exists)
+        last_session = self.settings.value("last_session", "")
+        if last_session and Path(last_session).exists():
+            Cozy.Session.load_session(self.canvas_scene, last_session)
+            self.current_session_path = last_session
+            self.status_label.setText(f"Welcome back! Loaded {Path(last_session).stem} 🌱")
+            self.logger.info(f"Auto-loaded last session: {last_session}")
 
-    def _handle_new_note(self):
-        """Creates a fresh, editable note on the canvas — instant inspiration! 📝"""
-        # Find the next available node_id
-        existing_ids = [item.node_id for item in self.canvas_scene.items() 
-                       if isinstance(item, Cozy.WarmNode)]
-        new_id = max(existing_ids, default=0) + 1
-
-        # Gentle staggered position so notes don't pile up
-        new_pos = QPointF(80 + (new_id % 5) * 60, 80 + (new_id // 5) * 80)
-
-        new_node = Cozy.WarmNode(
-            node_id=new_id,
-            full_text="New note 🌱\n\n",
-            pos=new_pos
-        )
-        self.canvas_scene.addItem(new_node)
-        self.canvas_view.centerOn(new_node)
-
-        self.status_label.setText(f"New note {new_id} created — double-click to edit! 📝")
-        self.logger.info(f"New note {new_id} added to canvas")
-
-    def _handle_delete_selected(self):
-        """Delete any selected notes — works from button or keyboard."""
-        selected = self.canvas_scene.selectedItems()
-        deleted = 0
-        for item in selected:
-            if isinstance(item, Cozy.WarmNode):
-                self.canvas_scene.removeItem(item)
-                deleted += 1
-        if deleted > 0:
-            self.status_label.setText(f"Deleted {deleted} note{'s' if deleted > 1 else ''} 🗑️")
-            self.logger.info(f"Deleted {deleted} selected note(s)")
-
-            # Force immediate redraw so the canvas instantly shows the blank space
-            self.canvas_scene.update()
-            self.canvas_view.viewport().repaint()
-                        
+    # ====================== LOAD ======================
     def _handle_load_button(self):
         file_path, success = open_image_dialog(
             self, logger=self.logger, image_preview=self.image_preview
@@ -145,9 +110,8 @@ class Paradisic(QMainWindow):
         self.status_label.setText("Preparing gentle background analysis... 🌱")
         QApplication.processEvents()
 
-        # Start the cozy worker in its own thread
         self.thread = QThread()
-        self.worker = Cozy.UploadWorker(file_path)          # ← clean global style
+        self.worker = Cozy.UploadWorker(file_path)
         self.worker.moveToThread(self.thread)
 
         self.worker.status_updated.connect(self.status_label.setText)
@@ -165,7 +129,7 @@ class Paradisic(QMainWindow):
             selected_items = self.canvas_scene.selectedItems()
             if selected_items:
                 for item in selected_items:
-                    if isinstance(item, Cozy.WarmNode):     # ← clean global style
+                    if isinstance(item, Cozy.WarmNode):
                         pix = QPixmap(file_path)
                         if not pix.isNull():
                             item.set_thumbnail(pix)
@@ -178,10 +142,10 @@ class Paradisic(QMainWindow):
                 )
 
     def _on_analysis_finished(self, node_id, message):
-        """Called when the background worker finishes — so gentle and celebratory!"""
         self.status_label.setText(message)
         self.logger.info(f"Background analysis complete for node {node_id}: {message}")
 
+    # ====================== CLEAR ======================
     def _clear_preview(self):
         self.image_preview.clear()
         self.image_preview.setText("Single image preview\n(Load to analyze)")
@@ -189,8 +153,8 @@ class Paradisic(QMainWindow):
         self.clear_button.setEnabled(False)
         self.logger.debug("Preview and status cleared")
 
+    # ====================== EXIT ======================
     def _handle_exit(self):
-        """Gentle exit — always clean and graceful 🌿"""
         self.logger.info("User chose to exit — closing Paradisic Fields with love")
         if self.thread is not None and self.thread.isRunning():
             self.thread.quit()
@@ -200,6 +164,93 @@ class Paradisic(QMainWindow):
             self.thread = None
             self.worker = None
         QApplication.instance().quit()
+
+    # ====================== SMART SAVE ======================
+    def _handle_save_session(self):
+        """Smart Save: overwrites current session if loaded, otherwise asks for new name."""
+        if self.current_session_path:
+            Cozy.Session.save_session(self.canvas_scene, self.current_session_path)
+            self.status_label.setText(f"Saved to {Path(self.current_session_path).stem} 🌟")
+            self.logger.info(f"Overwrote current session: {self.current_session_path}")
+        else:
+            filepath, _ = QFileDialog.getSaveFileName(
+                self, "Save Sketchbook Session", "", "JSON Files (*.json)"
+            )
+            if filepath:
+                Cozy.Session.save_session(self.canvas_scene, filepath)
+                self.current_session_path = filepath
+                self.status_label.setText("New session saved with love! 🌟")
+
+        # Remember this as the last session
+        if self.current_session_path:
+            self.settings.setValue("last_session", self.current_session_path)
+
+        self.refresh_quick_load_combo()
+
+    def _handle_load_session(self):
+        filepath, _ = QFileDialog.getOpenFileName(
+            self, "Load Sketchbook Session", "", "JSON Files (*.json)"
+        )
+        if filepath:
+            Cozy.Session.load_session(self.canvas_scene, filepath)
+            self.current_session_path = filepath
+            self.settings.setValue("last_session", filepath)   # remember it
+            self.status_label.setText(f"Loaded {Path(filepath).stem} 🌱")
+            self.refresh_quick_load_combo()
+
+    # ====================== QUICK LOAD ======================
+    def _handle_quick_load(self, index):
+        if index < 0:
+            return
+        filepath = self.quick_combo.itemData(index)
+        if filepath:
+            Cozy.Session.load_session(self.canvas_scene, filepath)
+            self.current_session_path = filepath
+            self.settings.setValue("last_session", filepath)
+            self.status_label.setText(f"Loaded {self.quick_combo.currentText()} 🌱")
+
+    def refresh_quick_load_combo(self):
+        if not hasattr(self, 'quick_combo'):
+            return
+        self.quick_combo.blockSignals(True)
+        self.quick_combo.clear()
+        sessions = Cozy.Session.get_saved_sessions()
+        for display_name, full_path in sessions:
+            self.quick_combo.addItem(display_name, full_path)
+        self.quick_combo.blockSignals(False)
+
+    # ====================== NEW NOTE ======================
+    def _handle_new_note(self):
+        existing_ids = [item.node_id for item in self.canvas_scene.items() 
+                       if isinstance(item, Cozy.WarmNode)]
+        new_id = max(existing_ids, default=0) + 1
+
+        new_pos = QPointF(80 + (new_id % 5) * 60, 80 + (new_id // 5) * 80)
+
+        new_node = Cozy.WarmNode(
+            node_id=new_id,
+            full_text="New note 🌱\n\n",
+            pos=new_pos
+        )
+        self.canvas_scene.addItem(new_node)
+        self.canvas_view.centerOn(new_node)
+
+        self.status_label.setText(f"New note {new_id} created — double-click to edit! 📝")
+        self.logger.info(f"New note {new_id} added to canvas")
+
+    # ====================== DELETE ======================
+    def _handle_delete_selected(self):
+        selected = self.canvas_scene.selectedItems()
+        deleted = 0
+        for item in selected:
+            if isinstance(item, Cozy.WarmNode):
+                self.canvas_scene.removeItem(item)
+                deleted += 1
+        if deleted > 0:
+            self.status_label.setText(f"Deleted {deleted} note{'s' if deleted > 1 else ''} 🗑️")
+            self.logger.info(f"Deleted {deleted} selected note(s)")
+            self.canvas_scene.update()
+            self.canvas_view.viewport().repaint()
 
 
 if __name__ == "__main__":

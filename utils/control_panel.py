@@ -3,7 +3,7 @@
 # Built using a single shared braincell by Yours Truly and Grok (February 2026)
 
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QComboBox
 )
 from PySide6.QtCore import Qt
 
@@ -16,7 +16,8 @@ def create_controls_panel(
     on_save_callback,
     on_load_session_callback,
     on_new_note_callback,
-    on_delete_note_callback
+    on_delete_note_callback,
+    on_quick_load_callback
 ):
     """
     Creates and returns the left controls panel widget.
@@ -57,7 +58,7 @@ def create_controls_panel(
 
     layout.addLayout(button_row)
 
-    # Second button row: New Note + Delete + Save/Load Session
+    # Second row: New Note + Delete + Save/Load Session
     session_row = QHBoxLayout()
     session_row.setSpacing(12)
 
@@ -88,7 +89,23 @@ def create_controls_panel(
 
     layout.addLayout(session_row)
 
-    # Status / result area
+    # Quick Load row — beautiful dropdown for saved sessions
+    quick_load_layout = QHBoxLayout()
+    quick_load_layout.setSpacing(12)
+
+    quick_label = QLabel("Quick Load:")
+    quick_label.setStyleSheet("font-weight: bold; color: #6b5a4a;")
+    quick_load_layout.addWidget(quick_label)
+
+    quick_combo = QComboBox()
+    quick_combo.setObjectName("quickLoadCombo")
+    quick_combo.setMinimumWidth(220)
+    quick_combo.currentIndexChanged.connect(on_quick_load_callback)
+    quick_load_layout.addWidget(quick_combo)
+
+    layout.addLayout(quick_load_layout)
+
+    # Status area
     status_label = QLabel("Ready to enjoy! 🌟")
     status_label.setAlignment(Qt.AlignCenter)
     status_label.setWordWrap(True)
@@ -96,4 +113,6 @@ def create_controls_panel(
     layout.addWidget(status_label)
     layout.addStretch()
 
-    return panel, load_button, clear_button, exit_button, save_button, load_session_button, new_note_button, delete_button, status_label
+    return (panel, load_button, clear_button, exit_button, save_button,
+            load_session_button, new_note_button, delete_button,
+            quick_combo, status_label)

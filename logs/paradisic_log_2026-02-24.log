@@ -400,3 +400,52 @@ TypeError: create_controls_panel() got an unexpected keyword argument 'on_exit_c
 [2026-02-24 18:06:47] [INFO] 🌸 Cozy stylesheet loaded successfully
 [2026-02-24 18:08:15] [INFO] Cozy Paradisic Fields launched (debug mode: False)
 [2026-02-24 18:08:15] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:34:05] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:34:05] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:34:05] [CRITICAL] Starting Cozy Paradisic Fields catastrophically failed
+Traceback (most recent call last):
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main.py", line 46, in main
+    window = Paradisic(logger=logger)
+  File "C:\Users\thisg\Desktop\Paradisic Fields\main_window.py", line 52, in __init__
+    self.delete_button, self.quick_combo, self.status_label = create_controls_panel(
+                                                              ~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        on_quick_load_callback=self._handle_quick_load
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: create_controls_panel() got an unexpected keyword argument 'on_quick_load_callback'. Did you mean 'on_load_callback'?
+[2026-02-24 18:35:28] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:35:28] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:35:54] [INFO] New note 6 added to canvas
+[2026-02-24 18:35:54] [INFO] New note 7 added to canvas
+[2026-02-24 18:35:54] [INFO] New note 8 added to canvas
+[2026-02-24 18:36:07] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:36:09] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:36:09] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:38:27] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:38:27] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:40:29] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:40:29] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:40:51] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:40:51] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:41:12] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:41:14] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:41:15] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:41:58] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:44:14] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:44:14] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:45:41] [INFO] Overwrote current session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
+[2026-02-24 18:45:44] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:45:45] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:45:45] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:47:09] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:47:10] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:47:23] [INFO] Overwrote current session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
+[2026-02-24 18:47:25] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:47:26] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:47:26] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:47:27] [INFO] Auto-loaded last session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
+[2026-02-24 18:48:07] [INFO] User chose to exit — closing Paradisic Fields with love
