@@ -2,24 +2,17 @@
   "version": "1.0",
   "nodes": [
     {
-      "node_id": 4,
-      "full_text": "New note 🌱",
-      "pos_x": 315.0,
-      "pos_y": -92.99999999999999,
+      "node_id": 8,
+      "full_text": "main.py",
+      "pos_x": 0.0,
+      "pos_y": -450.99999999999994,
       "thumbnail_path": null
     },
     {
-      "node_id": 1,
-      "full_text": "Welcome to Paradisic Fields 🌟",
-      "pos_x": 265.0,
-      "pos_y": -250.0,
-      "thumbnail_path": null
-    },
-    {
-      "node_id": 5,
-      "full_text": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n#\n# Paradisic Fields - main.py\n# A minor UI for enjoying.\n# Built using a single shared braincell by Yours Truly and Grok\n#\n# Toggle debug logging via environment variable COZY_DEBUG",
-      "pos_x": -75.0,
-      "pos_y": -97.0,
+      "node_id": 7,
+      "full_text": "Header",
+      "pos_x": -77.00000000000004,
+      "pos_y": -324.0,
       "thumbnail_path": null
     },
     {
@@ -30,17 +23,24 @@
       "thumbnail_path": null
     },
     {
-      "node_id": 7,
-      "full_text": "Header",
-      "pos_x": -49.00000000000003,
-      "pos_y": -283.0,
+      "node_id": 5,
+      "full_text": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n#\n# Paradisic Fields - main.py\n# A minor UI for enjoying.\n# Built using a single shared braincell by Yours Truly and Grok\n#\n# Toggle debug logging via environment variable COZY_DEBUG",
+      "pos_x": -72.0,
+      "pos_y": -125.0,
       "thumbnail_path": null
     },
     {
-      "node_id": 8,
-      "full_text": "main.py",
-      "pos_x": -129.0,
-      "pos_y": -449.0,
+      "node_id": 1,
+      "full_text": "Welcome to Paradisic Fields 🌟",
+      "pos_x": 274.0,
+      "pos_y": -282.99999999999994,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 4,
+      "full_text": "New note 🌱",
+      "pos_x": 315.0,
+      "pos_y": -92.99999999999999,
       "thumbnail_path": null
     }
   ]

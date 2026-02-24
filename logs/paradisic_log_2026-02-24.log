@@ -449,3 +449,8 @@ TypeError: create_controls_panel() got an unexpected keyword argument 'on_quick_
 [2026-02-24 18:47:26] [INFO] 🌸 Cozy stylesheet loaded successfully
 [2026-02-24 18:47:27] [INFO] Auto-loaded last session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
 [2026-02-24 18:48:07] [INFO] User chose to exit — closing Paradisic Fields with love
+[2026-02-24 18:50:14] [INFO] Cozy Paradisic Fields launched (debug mode: False)
+[2026-02-24 18:50:14] [INFO] 🌸 Cozy stylesheet loaded successfully
+[2026-02-24 18:50:15] [INFO] Auto-loaded last session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
+[2026-02-24 18:50:32] [INFO] Overwrote current session: C:/Users/thisg/Desktop/Paradisic Fields/mainpyings.json
+[2026-02-24 18:50:37] [INFO] User chose to exit — closing Paradisic Fields with love
