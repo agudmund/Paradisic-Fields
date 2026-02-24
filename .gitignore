@@ -1,21 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Generic ignores
-*.idlk
-*.csproj
-*.sln
-*.vsconfig
-packages-lock.json
-10 Things.txt
-proj.conf
-Build
+# Logs & runtime
+logs/
+*.log
 
-# Unity ignores 
-Unity/.vs
-Unity/Logs
-Unity/obj
-Unity/Library
-Unity/Temp
-Unity/UnityPackageManager
-Unity/ProjectSettings
-Unity/UserSettings
-Unity/Packages
+# Qt / PySide
+*.qssc
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+*.tmp
+*.temp
