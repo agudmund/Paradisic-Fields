@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "nodes": [
+    {
+      "node_id": 4,
+      "full_text": "New note 🌱",
+      "pos_x": 422.0,
+      "pos_y": -248.99999999999997,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 1,
+      "full_text": "Welcome to Paradisic Fields 🌟",
+      "pos_x": -55.99999999999997,
+      "pos_y": -138.0,
+      "thumbnail_path": null
+    },
+    {
+      "node_id": 5,
+      "full_text": "New note 🌱",
+      "pos_x": 26.0,
+      "pos_y": 97.0,
+      "thumbnail_path": null
+    }
+  ]
+}

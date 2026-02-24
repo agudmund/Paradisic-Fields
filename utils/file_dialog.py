@@ -10,9 +10,9 @@ import logging
 
 def open_image_dialog(parent_widget, logger=None, image_preview=None):
     if logger is None:
-        logger = logging.getLogger("fabric_identifier")
+        logger = logging.getLogger("paradisic_fields")
 
-    settings = QSettings("Single Shared Braincell", "Cozy Paradisic Fields")
+    settings = QSettings("Single Shared Braincell", "Paradisic Fields")
     start_dir = settings.value("last_image_dir", str(Path.home() / "Pictures"))
 
     file_path, _ = QFileDialog.getOpenFileName(
