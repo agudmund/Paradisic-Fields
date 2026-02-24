@@ -1,0 +1,2 @@
+# Paradisic Fields — minimal dependencies
+PySide6>=6.5.0
